@@ -7,6 +7,14 @@ class Board:
         self.pieces_grid = [[' ']*size for _ in range (size)]
         self.req_to_win = 3
 
+
+    def get_size(self):
+        '''
+        retun board size
+        '''
+        return self.size
+    
+    #temp function for now untill i make gui
     def print_board(self):
         for piece in self.pieces_grid:
             print("|",end='')
@@ -31,6 +39,12 @@ class Board:
         self.pieces_grid[row][col] = player
         return
 
+    def undo(self, row, col):
+        '''
+        mark players (O, X) move on the board
+        '''
+        self.pieces_grid[row][col] = ' '
+        return
 
     def is_full(self):
         '''
@@ -130,8 +144,17 @@ class Board:
         self.pieces_grid = [[' ']* self.size for _ in range ( self.size)]
 
 
+    def get_valid_moves(self):
+        '''gets all vlaid moves that can be done on the board (intended for the computer player)'''
+        size = self.size # for efficiency. why not.
+        moves = []
+        for row in range(size):
+            for col in range(size):
+                if self.pieces_grid[row][col] == ' ':
+                    moves.append((row,col))
+        return moves
 
-#b = Board(3)
+#b = Board(3)   
 #b.make_move(1,1,'x')
 #b.print_board()
 
