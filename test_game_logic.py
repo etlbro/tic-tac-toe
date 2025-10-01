@@ -110,7 +110,7 @@ class TestGameEnding(unittest.TestCase):
         honestly not sure this will look
         '''
         gl.start_new_game()
-        gl.run_game(['easy', 'x'], ['easy', 'o'])
+        gl.run_game_test(['easy', 'x'], ['easy', 'o'])
         gl.board.print_board()
 
     def test_full_game_hard(self):
@@ -118,7 +118,7 @@ class TestGameEnding(unittest.TestCase):
         tic-tac-toe is a sloved game. should be a tie
         '''
         gl.start_new_game()
-        gl.run_game(['hard', 'x'], ['hard', 'o'])
+        gl.run_game_test(['hard', 'x'], ['hard', 'o'])
         gl.board.print_board()
 
 

@@ -1,31 +1,21 @@
 from abc import ABC, abstractmethod
 import random
+import gui
 
-'''
-class Symbol:
-    def __init__(self, symbol):
-        self.symbol = symbol
 
-    def switch_symbol(self,symbol):
-         if symbol == 'x':
-              self.symbol = 'o'
-         else:
-              self.symbol = 'x'     
-
-    def get_symbol(self):
-         return self.symbol
-'''
 
 class AbsPlayer(ABC):
     '''
     abstarct player class for factory design pattern
     '''
-    def __init__(self, symbol):
+    def __init__(self, symbol , gui):
             
         self.symbol = symbol
+        self.gui = gui
 
     def get_symbol(self):   
         return self.symbol
+    
     # helper resursive function to find actuall best move
     def find_best_move(self, board, analysis_depth,  symbol):
         if board.is_full() or  analysis_depth < 0:
@@ -72,9 +62,11 @@ class AbsPlayer(ABC):
 class HumanPlayer(AbsPlayer):
       
     def get_move(self, board):
-        row = int(input("row:"))
-        col = int(input("col:"))
-        return row,col
+        while self.gui.next_move is None:
+            self.gui.root.update()  # allow GUI to process events
+        move = self.gui.next_move
+        self.gui.next_move = None
+        return move
             
 
 
