@@ -1,13 +1,11 @@
-# 🎮 Tic-Tac-Toe
+#  Tic-Tac-Toe
 
 A modern, object-oriented Tic-Tac-Toe game implemented in **Python**.  
 It supports human vs. human, human vs. computer, and computer vs. computer matches, and can be run either with a GUI or in the console.
 
-![Tic-Tac-Toe Logo](assets/tictactoe_logo.png)
-
 ---
 
-## ✨ Features
+##  Features
 
 - **Clean OOP architecture** using an abstract `AbsPlayer` base class and concrete player types.
 - **Multiple player modes:** Human, Random AI, (future) Minimax AI.
@@ -18,7 +16,7 @@ It supports human vs. human, human vs. computer, and computer vs. computer match
 
 ---
 
-## 📝 How It Works
+##  How It Works
 
 - The `Board` class manages the grid, checks for valid moves, and detects wins/draws.
 - The `AbsPlayer` abstract base class defines the interface for all players.
@@ -27,7 +25,7 @@ It supports human vs. human, human vs. computer, and computer vs. computer match
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 tic-tac-toe/
 │
@@ -39,7 +37,7 @@ tic-tac-toe/
 
 
 
-## 📝 How to Run
+##  How to Run
 
 Clone the repository and run:
 
