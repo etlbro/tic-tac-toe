@@ -72,8 +72,8 @@ class AbsPlayer(ABC):
 class HumanPlayer(AbsPlayer):
       
     def get_move(self, board):
-        row = int(input("row:"))
-        col = int(input("col:"))
+        row = int(input("select row:"))
+        col = int(input("select column:"))
         return row,col
             
 
@@ -104,7 +104,7 @@ class HardPlayer(AbsPlayer):
 
 class PlayerFactory:
     '''
-    will return two player objects, based on user input
+    creats a player matching input string. expects ('player_type' , 'player_symbol')
       '''
     _player_map = {
         "easy"   : EasyPlayer,
