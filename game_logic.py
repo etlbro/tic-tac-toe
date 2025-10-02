@@ -57,6 +57,7 @@ class Game_logic:
         '''
         main function to run game, handle player turns and checkfor game endings
         '''
+        self.start_new_game()
         try:
             player_1 = player.PlayerFactory.creat_player(player_1_data) #make instance of human player with selected symbol
             player_2 = player.PlayerFactory.creat_player(player_2_data) 
@@ -67,11 +68,12 @@ class Game_logic:
         turns = cycle(players)
             #player.HardPlayer("x"), player.HardPlayer("o")
         for current_player in turns:
+            print(f"{current_player.get_symbol()}'s turn")
             while True: # makes sure move is valid, keep trying until set (= make move return true)
                 move = current_player.get_move(self.board) 
                 if(self.make_move(current_player.get_symbol(),move[0], move[1])):
                     break
-
+                print("invlaid move, please chose a diffrent cell")    
             self.board.print_board()                   
             if self.game_ended():
                 print("game over")
