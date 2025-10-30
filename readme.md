@@ -29,7 +29,7 @@ It supports human vs. human, human vs. computer, and computer vs. computer match
 
 tic-tac-toe/
 
-│
+
 ├── main.py           # Entry point
 
 ├── board.py          # basic board logic, 
